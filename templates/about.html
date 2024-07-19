@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+
+  <!-- Hero Section -->
+  <section class="relative h-screen w-full text-white text-center py-20 about-hero-section">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/aboutbackground.jpg' %}');">
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
+    <div class="container relative mx-auto z-10 flex flex-col justify-center items-center h-full">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">About Us</h1>
+      <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-8 max-w-lg">Discover more about our clinic and the dedicated team behind your dental care.</p>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section id="introduction" class="py-20 px-4 bg-white">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <img src="{% static 'images/clinic.jpg' %}" alt="Our Clinic" class="w-full max-w-md h-auto rounded-lg shadow-lg mx-auto" />
+      </div>
+
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold mb-4">Welcome to Our Clinic</h2>
+        <p class="text-lg text-gray-700 mb-4">At our clinic, we provide comprehensive dental care tailored to meet your individual needs. Our experienced team is dedicated to ensuring your comfort and achieving the best possible outcomes.</p>
+        <p class="text-lg text-gray-700">We use the latest technology and techniques to deliver high-quality dental care, from routine check-ups to advanced treatments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Meet Our Team</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- Team Member 1 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="{% static 'images/doctor1.png' %}" alt="Dr. John Doe" class="w-full h-60 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Dr. Payal Rastogi</h3>
+            <p class="text-gray-700">Lead Dentist</p>
+            <p class="text-gray-600 mt-2">Dr. Payal has over 7 years of experience in general and cosmetic dentistry. He is passionate about providing exceptional patient care.</p>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="{% static 'images/doctor2.png' %}" alt="Dr. Jane Smith" class="w-full h-60 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Dr. Satyam Saxena</h3>
+            <p class="text-gray-700">Orthodontist</p>
+            <p class="text-gray-600 mt-2">Dr. Saxena specializes in orthodontics and has a passion for helping patients achieve beautiful, straight smiles.</p>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="{% static 'images/doctor3.png' %}" alt="Dr. Alice Johnson" class="w-full h-60 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Dr. Shubham Agnihotri</h3>
+            <p class="text-gray-700">Pediatric Dentist</p>
+            <p class="text-gray-600 mt-2">Dr. Agnihotri is dedicated to providing gentle and effective dental care for children of all ages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section id="history" class="py-20 px-4 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Our History</h2>
+      <p class="text-lg text-gray-700 mb-4">Founded in 2022, our clinic has been serving the community with top-notch dental care. Our mission is to provide personalized care with a focus on comfort and quality. Over the years, we have grown and evolved to meet the needs of our patients, always striving to offer the latest advancements in dental technology and techniques.</p>
+      <p class="text-lg text-gray-700">We take pride in our dedicated team and our commitment to enhancing the oral health and well-being of our patients.</p>
+    </div>
+  </section>
+
+  
+
+  <!-- GSAP Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      gsap.registerPlugin(ScrollTrigger)
+    
+      // Hero Animation
+      gsap.from('.about-hero-section h1', {
+        duration: 1.5,
+        y: 100,
+        opacity: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.about-hero-section',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      })
+    
+      gsap.from('.about-hero-section p', {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.about-hero-section',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      })
+    
+      // Introduction Section Animation
+      gsap.from('#introduction img', {
+        duration: 1.5,
+        x: -200,
+        opacity: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#introduction',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      })
+    
+      gsap.from('#introduction div', {
+        duration: 1.5,
+        x: 200,
+        opacity: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#introduction',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      })
+    
+      // Team Section Animation
+      gsap.utils.toArray('#team .bg-white').forEach((teamMember, index) => {
+        gsap.from(teamMember, {
+          duration: 1.5,
+          opacity: 0,
+          y: 100,
+          ease: 'power2.out',
+          delay: index * 0.3,
+          scrollTrigger: {
+            trigger: teamMember,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        })
+      })
+    
+      // History Section Animation
+      gsap.from('#history p', {
+        duration: 1.5,
+        y: 100,
+        opacity: 0,
+        ease: 'power2.out',
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: '#history',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      })
+    })
+  </script>
+{% endblock %}

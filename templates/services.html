@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="relative h-screen w-full text-white text-center py-20 hero-section">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{% static 'images/services-background.jpg' %}');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
+    <div class="container relative mx-auto z-10 flex flex-col justify-center items-center h-full">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">Our Services</h1>
+        <p class="text-lg md:text-xl lg:text-2xl xl:text-3xl mb-8 max-w-lg">Discover the range of services we offer to help you maintain a healthy and beautiful smile.</p>
+        <a href="#" class="px-4 py-2 bg-green-600 hover:bg-green-700 text-white ">
+            Get an Appointment
+        </a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="bg-gray-100 py-20 services-section">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Service Item 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/generaldentistry.png' %}" alt="General Dentistry" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">General Dentistry</h3>
+                    <p class="text-gray-700">Comprehensive dental care for patients of all ages.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/orthodontics.png' %}" alt="Orthodontics" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Orthodontics</h3>
+                    <p class="text-gray-700">Straighten your teeth and improve your smile with our orthodontic treatments.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/cosmeticdentistry.png' %}" alt="Cosmetic Dentistry" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Cosmetic Dentistry</h3>
+                    <p class="text-gray-700">Enhance your smile with our range of cosmetic dental services.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/pediatricdentistry.png' %}" alt="Pediatric Dentistry" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Pediatric Dentistry</h3>
+                    <p class="text-gray-700">Specialized dental care for children and adolescents.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/endodontics.png' %}" alt="Endodontics" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Endodontics</h3>
+                    <p class="text-gray-700">Root canal therapy and treatment of dental pulp diseases.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/periodontics.png' %}" alt="Periodontics" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Periodontics</h3>
+                    <p class="text-gray-700">Diagnosis and treatment of gum diseases and supporting structures.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 7 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/oralsurgery.png' %}" alt="Oral Surgery" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Oral Surgery</h3>
+                    <p class="text-gray-700">Surgical procedures to treat complex dental conditions.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 8 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/dentalimplants.png' %}" alt="Dental Implants" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Dental Implants</h3>
+                    <p class="text-gray-700">Restoration of missing teeth with durable dental implants.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Service Item 9 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{% static 'images/emergencydentistry.png' %}" alt="Emergency Dentistry" class="w-full h-auto">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Emergency Dentistry</h3>
+                    <p class="text-gray-700">Immediate dental care for urgent situations and accidents.</p>
+                    <a href="#" class="block mt-4 text-blue-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- GSAP Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Section Animation
+    gsap.from(".hero-section h1", {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".hero-section",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    gsap.from(".hero-section p", {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        delay:0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".hero-section",
+            start: "top 70%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Services Section Animation Triggered by ScrollTrigger
+        gsap.utils.toArray('.services-section .bg-white').forEach((service, index) => {
+            gsap.from(service, {
+                scrollTrigger: {
+                    trigger: service,
+                    start: "top 80%", // adjust the start trigger point as needed
+                    toggleActions: "play none none none",
+                },
+                opacity: 0,
+                x: -1000,
+                duration: 1.5,
+                ease: "power2.out",
+                delay: index * 0.2 // staggered animation delay
+            });
+        });
+        
+    // Contact Section Animation
+    gsap.from("#contact h2", {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    gsap.from("#contact p, #contact a", {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: "power2.out",
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: "#contact",
+            start: "top 70%",
+            toggleActions: "play none none none"
+        }
+    });
+});
+</script>
+
+{% endblock content %}

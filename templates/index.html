@@ -19,6 +19,14 @@
     </div>
 </section>
 
+<!-- Expanding Div Section -->
+<section id="expand-section" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <div class="expanding-div w-16 h-16 bg-black flex items-center justify-center">
+        <h1 class="text-white text-2xl opacity-0">Your Text Here</h1>
+    </div>
+</section>
+
+
 
 
 <!-- Services Section -->
@@ -215,13 +223,7 @@
 </section>
 
 
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
-        <p>&copy; 2024 Dental Company. All rights reserved.</p>
-        <p>Follow us on <a href="#" class="text-blue-400">Facebook</a>, <a href="#" class="text-blue-400">Twitter</a>, and <a href="#" class="text-blue-400">Instagram</a>.</p>
-    </div>
-</footer>
+
 
 <!-- GSAP Animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -349,6 +351,33 @@ createScrollTrigger("#appointment-services", [
     ".appointment-button"
 ]);
 
-   
+// Create a timeline for the expanding div and text
+gsap.timeline({
+  scrollTrigger: {
+    trigger: "#expand-section",
+    start: "top center", // Animation starts when the section’s center is at the center of the viewport
+    end: "bottom bottom",
+    scrub: true,
+    onUpdate: (self) => {
+      // Update the div size and text opacity based on the scroll progress
+      const progress = self.progress;
+
+      // Expand the div
+      gsap.to(".expanding-div", {
+        width: progress * 100 + "vw",
+        height: progress * 100 + "vh",
+        ease: "power1.out",
+        overwrite: "auto"
+      });
+
+      // Control the text opacity
+      gsap.to(".expanding-div h1", {
+        opacity: progress,
+        ease: "power1.out",
+        overwrite: "auto"
+      });
+    }
+  }
+});
 </script>
 {% endblock content %}

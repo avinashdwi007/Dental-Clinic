@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <main class="py-12 bg-gray-100 min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h1 class="text-3xl font-semibold text-gray-800 mb-6">Sign Up</h1>
+                <form action="{% url 'signup' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-600 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-600 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-600 mb-2">Password</label>
+                        <input type="password" id="password" name="password" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirm_password" class="block text-gray-600 mb-2">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script>
+        gsap.from(".form-container", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power2.out"
+        });
+    </script>
+{% endblock content %}
