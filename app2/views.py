@@ -23,7 +23,7 @@ def signup(request):
         if password == confirm_password:
             try:
                 # Create a new user with hashed password
-                User.objects.create_user(username=email, email=email, password=password,confirm_password=confirm_password)
+                User.objects.create_user(username=email, email=email, password=password)
                 return redirect('login')
             except Exception as e:
                 messages.error(request, f'Error: {e}')

@@ -1,0 +1,1 @@
+web: gunicorn aestheticproject.wsgi --log-file -

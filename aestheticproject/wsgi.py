@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aestheticproject.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aestheticproject.settings_rail')
 
 application = get_wsgi_application()
