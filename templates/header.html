@@ -13,9 +13,7 @@
                 <li><a href="{% url 'about' %}" class="hover:text-gray-800">About Us</a></li>
                 <li><a href="{% url 'services' %}" class="hover:text-gray-800">Services</a></li>
                 <li><a href="{% url 'contact' %}" class="hover:text-gray-800">Contact Us</a></li>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'admin' %}" class="hover:text-gray-800">Admin</a></li>
-                {% endif %}
+               
             </ul>
         </nav>
         <!-- Sign Up and Login Buttons on the Right -->

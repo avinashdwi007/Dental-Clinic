@@ -2,7 +2,8 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.models import User
-from app2.models import data
+from django.core.mail import send_mail
+from django.conf import settings
 
 def index(request):
     return render(request, 'index.html')
@@ -48,21 +49,24 @@ def logout(request):
     auth_logout(request)
     return redirect('home')
 
+
+
 def contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
+        subject = request.POST.get('subject')
+        sender_email = request.POST.get('email')
         message = request.POST.get('message')
-
-        new_data = data(name=name, email=email, phone=phone, message=message)
-        new_data.save()
-
-        return redirect('home')
+        
+        # Email details
+        subject = f"Message from {sender_email}: {subject}"
+        message_body = f"Message from: {sender_email}\n\nMessage:\n{message}"
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email_from]  # Email is sent to you
+        
+        try:
+            send_mail(subject, message_body, email_from, recipient_list)
+            
+        except Exception as e:
+            messages.error(request, f'Error: {e}')
+            
     return render(request, 'contact.html')
-
-def admin(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
-    data_list = data.objects.all()
-    return render(request, 'admin.html', {'data_list': data_list})
